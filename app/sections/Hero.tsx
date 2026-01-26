@@ -61,12 +61,9 @@ export default function Hero() {
                         </div>
 
                         <p className="text-lg text-gray-400 max-w-2xl mb-12 leading-relaxed">
-                            L1 Software Engineer (AI/ML) at VivaSoft Nepal with experience in leading software development for AI-driven
-                            platforms, including voice agents, memory-management chat systems, and real-time analytics dashboards. Skilled in
-                            Python, FastAPI, LLMs, graph databases, and cloud deployment. Passionate about building practical AI/ML solutions,
-                            optimizing real-time systems, and contributing to innovative, collaborative AI projects.Passionate about simplifying
-                            complex ideas, building practical ML solutions. Curious, collaborative, and eager to grow in a collaborative and fast-
-                            paced AI projects and environment.
+                            L1 Software Engineer (AI/ML) at VivaSoft Nepal with experience in developing AI-driven platforms, including voice agents, memory-aware chat systems, and real-time analytics dashboards.
+                            Skilled in Python, FastAPI, LLMs, graph databases, and cloud deployment.
+                            Passionate about building practical AI/ML solutions, optimizing real-time systems, and contributing to innovative, collaborative projects.
                         </p>
 
                         <div className="flex flex-wrap gap-4 mb-16">
