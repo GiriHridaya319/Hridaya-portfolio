@@ -13,11 +13,33 @@ export default function Contact() {
         e.preventDefault();
         setStatus('loading');
 
-        // Simulate API call
-        setTimeout(() => {
+        const formData = new FormData(e.currentTarget);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            subject: formData.get('subject'),
+            message: formData.get('message'),
+        };
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) throw new Error('Failed to send message');
+
             setStatus('success');
+            (e.target as HTMLFormElement).reset();
             setTimeout(() => setStatus('idle'), 5000);
-        }, 1500);
+        } catch (error) {
+            console.error('Contact form error:', error);
+            setStatus('error');
+            setTimeout(() => setStatus('idle'), 5000);
+        }
     };
 
     return (
@@ -77,6 +99,7 @@ export default function Contact() {
                                 <label className="text-sm text-gray-400 font-mono">NAME</label>
                                 <input
                                     required
+                                    name="name"
                                     type="text"
                                     placeholder="John Doe"
                                     className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
@@ -86,6 +109,7 @@ export default function Contact() {
                                 <label className="text-sm text-gray-400 font-mono">EMAIL</label>
                                 <input
                                     required
+                                    name="email"
                                     type="email"
                                     placeholder="john@example.com"
                                     className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
@@ -97,6 +121,7 @@ export default function Contact() {
                             <label className="text-sm text-gray-400 font-mono">SUBJECT</label>
                             <input
                                 required
+                                name="subject"
                                 type="text"
                                 placeholder="AI Project Collaboration"
                                 className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
@@ -107,6 +132,7 @@ export default function Contact() {
                             <label className="text-sm text-gray-400 font-mono">MESSAGE</label>
                             <textarea
                                 required
+                                name="message"
                                 rows={5}
                                 placeholder="Tell me about your project..."
                                 className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors resize-none"
@@ -138,6 +164,17 @@ export default function Contact() {
                                 >
                                     <CheckCircle2 size={20} />
                                     Message sent successfully!
+                                </motion.div>
+                            )}
+                            {status === 'error' && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0 }}
+                                    className="p-4 bg-red-500/10 border border-red-500/20 text-red-500 rounded-xl flex items-center gap-3"
+                                >
+                                    <AlertCircle size={20} />
+                                    Failed to send message. Please try again.
                                 </motion.div>
                             )}
                         </AnimatePresence>
