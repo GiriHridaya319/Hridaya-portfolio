@@ -9,7 +9,7 @@ import Image from 'next/image';
 export default function Hero() {
     const [text, setText] = useState('');
     const [roleIndex, setRoleIndex] = useState(0);
-    const roles = ['AI Engineer', 'ML Engineer', 'Full-Stack Developer'];
+    const roles = ['AI Engineer', 'ML Engineer', 'RAG Specialist', 'Full-Stack Developer'];
     const [isDeleting, setIsDeleting] = useState(false);
 
     useEffect(() => {
