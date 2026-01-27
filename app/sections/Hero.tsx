@@ -46,7 +46,7 @@ export default function Hero() {
                     >
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-effect text-primary text-sm font-mono mb-6 border border-primary/20">
                             <Terminal size={14} />
-                            <span>system.init("HridayaGiri")</span>
+                            <span>system.out.println("HridayaGiri")</span>
                         </div>
 
                         <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
