@@ -61,10 +61,10 @@ export default function Hero() {
                         </div>
 
                         <p className="text-lg text-foreground/60 max-w-2xl mb-12 leading-relaxed">
-                            L1 Software Engineer at Vivasoft Nepal, specializing in <span className="text-foreground font-semibold">Backend Engineering</span> and AI.
+                            L1 Software Engineer at Vivasoft Nepal, specializing in <span className="text-foreground font-semibold">Backend Engineering and AI/ML .</span>
                             Building voice agents, memory-aware systems, and high-performance backend architectures.
                         </p>
-
+                        s
                         <div className="flex flex-wrap gap-4 mb-16">
                             <motion.a
                                 whileHover={{ scale: 1.05 }}
