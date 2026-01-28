@@ -64,7 +64,7 @@ export default function Hero() {
                             L1 Software Engineer at Vivasoft Nepal, specializing in <span className="text-foreground font-semibold">Backend Engineering and AI/ML .</span>
                             Building voice agents, memory-aware systems, and high-performance backend architectures.
                         </p>
-                        s
+
                         <div className="flex flex-wrap gap-4 mb-16">
                             <motion.a
                                 whileHover={{ scale: 1.05 }}
