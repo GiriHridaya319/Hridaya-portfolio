@@ -13,8 +13,8 @@ const strengths = [
     },
     {
         icon: Cpu,
-        title: 'Full-Stack Development',
-        desc: 'Building robust backends with Python/Go and interactive frontends with Next.js.'
+        title: 'Backend Engineering',
+        desc: 'Building robust, scalable backends with Python, Go, and FastAPI, focusing on performance.'
     },
     {
         icon: Rocket,
@@ -33,7 +33,7 @@ export default function About() {
         <section id="about" className="py-24 px-6 max-w-7xl mx-auto">
             <SectionHeader
                 title="About Me"
-                subtitle="L1 Software Engineer (AI/ML) at VivaSoft Nepal with a passion for building practical ML solutions."
+                subtitle="L1 Software Engineer (Backend & AI/ML) at VivaSoft Nepal, specializing in building scalable AI-driven backends."
             />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 items-center">
@@ -51,16 +51,16 @@ export default function About() {
                 </div>
 
                 <div className="lg:col-span-2 space-y-8">
-                    <div className="space-y-6 text-gray-400 leading-relaxed text-lg">
+                    <div className="space-y-6 text-foreground/60 leading-relaxed text-lg">
                         <p>
-                            I am a Software Engineer with a strong interest in AI, machine learning, and cloud-based systems.
-                            Currently, I work at Vivasoft Nepal, where I have been involved in building AI-driven applications such as voice agents, conversational systems, and analytics dashboards.
-                            I enjoy learning how real-world AI systems are designed, deployed, and scaled.
+                            I am a Software Engineer with a deep focus on <span className="text-foreground font-semibold">Backend Development</span> and AI/ML systems.
+                            Currently, I work at Vivasoft Nepal, where I specialize in building the backbone of AI-driven applications, including voice agents, conversational systems, and high-performance analytics dashboards.
+                            I am passionate about designing architectures that are not only intelligent but also scalable and robust.
                         </p>
                         <p>
-                            I have hands-on experience working with STT/TTS models, LLM-based applications, and backend services using Python and FastAPI.
-                            Through my projects, I have explored model training, retrieval-augmented generation (RAG), graph databases like Neo4j, and cloud deployment on AWS and GCP.
-                            I’m passionate about learning, experimenting, and growing as an AI engineer by turning ideas into working software.
+                            With hands-on experience in STT/TTS models, LLM-based applications, and FastAPI, I bridge the gap between AI research and production-ready backend services.
+                            I leverage graph databases like Neo4j, vector stores like Qdrant, and cloud platforms like AWS/GCP to build memory-aware, real-time AI agents.
+                            My goal is to evolve into a proficient Backend Architect, creating systems that power the next generation of AI.
                         </p>
                     </div>
 
@@ -68,8 +68,8 @@ export default function About() {
                         {strengths.map((s, i) => (
                             <AnimatedCard key={i} delay={i * 0.1}>
                                 <s.icon className="text-primary mb-4" size={28} />
-                                <h4 className="text-white font-bold mb-2">{s.title}</h4>
-                                <p className="text-gray-500 text-sm">{s.desc}</p>
+                                <h4 className="text-foreground font-bold mb-2">{s.title}</h4>
+                                <p className="text-foreground/40 text-sm">{s.desc}</p>
                             </AnimatedCard>
                         ))}
                     </div>

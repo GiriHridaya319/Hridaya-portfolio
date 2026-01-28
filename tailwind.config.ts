@@ -8,18 +8,20 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                background: '#0B0F14',
-                foreground: '#FFFFFF',
+                background: '#020617', // Deep Midnight Blue
+                foreground: '#F8FAFC', // Slate 100
                 primary: {
-                    DEFAULT: '#00F0FF', // Neon Blue/Cyan
-                    dark: '#00B8C4',
+                    DEFAULT: '#F97316', // Vibrant Orange
+                    dark: '#EA580C',    // Deep Orange
                 },
                 accent: {
-                    purple: '#A855F7',
-                    green: '#22C55E',
+                    blue: '#1E40AF',    // Royal Blue
+                    orange: '#F97316',
+                    black: '#020617',
+                    slate: '#F8FAFC',
                 },
                 glass: 'rgba(255, 255, 255, 0.03)',
-                'glass-border': 'rgba(255, 255, 255, 0.1)',
+                'glass-border': 'rgba(255, 255, 255, 0.08)',
             },
             fontFamily: {
                 sans: ['Inter', 'var(--font-inter)', 'sans-serif'],

@@ -9,7 +9,7 @@ import Image from 'next/image';
 export default function Hero() {
     const [text, setText] = useState('');
     const [roleIndex, setRoleIndex] = useState(0);
-    const roles = ['AI Engineer', 'ML Engineer', 'RAG Specialist', 'Full-Stack Developer'];
+    const roles = ['AI Engineer', 'ML Engineer', 'RAG Specialist', 'Backend Developer'];
     const [isDeleting, setIsDeleting] = useState(false);
 
     useEffect(() => {
@@ -33,9 +33,9 @@ export default function Hero() {
     return (
         <section id="hero" className="min-h-screen flex flex-col justify-center relative overflow-hidden px-6">
             {/* Background Effect */}
-            <div className="absolute inset-0 neural-bg opacity-30 pointer-events-none" />
-            <div className="absolute top-1/4 -left-20 w-80 h-80 bg-primary/20 rounded-full blur-[120px] animate-pulse-slow" />
-            <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-accent-purple/20 rounded-full blur-[120px] animate-pulse-slow" />
+            <div className="absolute inset-0 neural-bg opacity-40 pointer-events-none" />
+            <div className="absolute top-1/4 -left-20 w-80 h-80 bg-accent-blue/15 rounded-full blur-[120px] animate-pulse-slow" />
+            <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-primary/15 rounded-full blur-[120px] animate-pulse-slow" />
 
             <div className="max-w-7xl mx-auto w-full relative z-10">
                 <div className="grid lg:grid-cols-2 gap-12 items-center text-left">
@@ -46,23 +46,23 @@ export default function Hero() {
                     >
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-effect text-primary text-sm font-mono mb-6 border border-primary/20">
                             <Terminal size={14} />
-                            <span>system.out.println("Hi, I'm Hridaya Giri")</span>
+                            <span>System.out.println(&quot;Hi, I'm Hridaya Giri&quot;);</span>
                         </div>
 
-                        <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+                        <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-foreground">
                             Hi, I&apos;m <span className="text-gradient">Hridaya Giri</span>
                         </h1>
 
                         <div className="h-12 md:h-16 mb-8">
-                            <h2 className="text-2xl md:text-4xl text-gray-400 font-mono">
+                            <h2 className="text-2xl md:text-4xl text-foreground/60 font-mono">
                                 &gt; {text}
                                 <span className="animate-pulse bg-primary inline-block w-2 md:w-3 h-6 md:h-10 ml-2" />
                             </h2>
                         </div>
 
-                        <p className="text-lg text-gray-400 max-w-2xl mb-12 leading-relaxed">
-                            L1 Software Engineer at VivaSoft Nepal, building voice agents, memory-aware chat systems, and real-time analytics dashboards.
-                            Passionate about Python, LLMs, cloud deployment, and creating practical AI solutions for innovative projects.
+                        <p className="text-lg text-foreground/60 max-w-2xl mb-12 leading-relaxed">
+                            L1 Software Engineer at Vivasoft Nepal, specializing in <span className="text-foreground font-semibold">Backend Engineering</span> and AI.
+                            Building voice agents, memory-aware systems, and high-performance backend architectures.
                         </p>
 
                         <div className="flex flex-wrap gap-4 mb-16">
@@ -78,7 +78,7 @@ export default function Hero() {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 href="/api/download-cv"
-                                className="px-8 py-4 glass-effect border border-white/10 font-bold rounded-xl flex items-center gap-2 hover:bg-white/5 transition-all"
+                                className="px-8 py-4 glass-effect border border-white/10 font-bold rounded-xl flex items-center gap-2 hover:bg-white/5 transition-all text-foreground"
                             >
                                 <Download size={20} />
                                 Download CV
@@ -99,7 +99,7 @@ export default function Hero() {
                                     href={social.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-gray-500 hover:text-primary transition-colors"
+                                    className="text-foreground/40 hover:text-primary transition-colors"
                                 >
                                     <social.icon size={24} />
                                 </motion.a>
@@ -113,17 +113,17 @@ export default function Hero() {
                         transition={{ duration: 1, delay: 0.2 }}
                         className="hidden lg:block relative"
                     >
-                        <div className="relative w-[500px] h-[500px]">
+                        <div className="relative w-[420px] h-[420px] mx-auto">
                             {/* Animated Frames */}
                             <div className="absolute inset-0 border-2 border-primary/20 rounded-3xl -rotate-6 animate-pulse" />
-                            <div className="absolute inset-0 border-2 border-accent-purple/20 rounded-3xl rotate-3" />
+                            <div className="absolute inset-0 border-2 border-accent-blue/20 rounded-3xl rotate-3" />
 
-                            <div className="relative w-full h-full rounded-3xl overflow-hidden glass-border p-2">
+                            <div className="relative w-full h-full rounded-3xl overflow-hidden glass-border p-2 border border-primary/20">
                                 <Image
                                     src="/images/profile.jpg"
                                     alt="Hridaya Giri"
                                     fill
-                                    className="object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                                    className="object-cover rounded-2xl transition-all duration-700 hover:scale-105"
                                     priority
                                 />
                             </div>
@@ -141,7 +141,14 @@ export default function Hero() {
                                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                                 className="absolute -bottom-4 -left-4 glass-effect p-3 rounded-xl border border-accent-purple/20"
                             >
-                                <div className="text-accent-purple font-mono text-sm">status: learning</div>
+                                <div className="text-primary font-mono text-sm">status: built_for_scale</div>
+                            </motion.div>
+                            <motion.div
+                                animate={{ y: [0, 10, 0] }}
+                                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                                className="absolute -bottom-4 -left-4 glass-effect p-3 rounded-xl border border-accent-blue/20 shadow-[0_10px_30px_rgba(30,64,175,0.2)]"
+                            >
+                                <div className="text-accent-blue font-mono text-sm">role: backend_engineer</div>
                             </motion.div>
                         </div>
                     </motion.div>

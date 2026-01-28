@@ -40,7 +40,7 @@ export default function Navbar() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.05 }}
                             href={item.href}
-                            className="text-sm font-medium text-gray-400 hover:text-primary transition-colors"
+                            className="text-sm font-medium text-foreground/60 hover:text-primary transition-colors"
                         >
                             {item.name}
                         </motion.a>
@@ -48,7 +48,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Mobile Toggle */}
-                <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
+                <button className="md:hidden text-primary" onClick={() => setIsOpen(!isOpen)}>
                     {isOpen ? <X /> : <Menu />}
                 </button>
             </div>
@@ -67,7 +67,7 @@ export default function Navbar() {
                                 <a
                                     key={item.name}
                                     href={item.href}
-                                    className="text-gray-400 hover:text-primary transition-colors py-2"
+                                    className="text-foreground/60 hover:text-primary transition-colors py-2"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {item.name}

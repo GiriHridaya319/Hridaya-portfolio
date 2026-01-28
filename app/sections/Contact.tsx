@@ -30,17 +30,25 @@ export default function Contact() {
                 body: JSON.stringify(data),
             });
 
-            if (!response.ok) throw new Error('Failed to send message');
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.errors ? result.errors.join(', ') : result.message || 'Failed to send message');
+            }
 
             setStatus('success');
             (e.target as HTMLFormElement).reset();
             setTimeout(() => setStatus('idle'), 5000);
-        } catch (error) {
+        } catch (error: any) {
             console.error('Contact form error:', error);
             setStatus('error');
+            // Show the specific error message to the user
+            setErrorMessage(error.message);
             setTimeout(() => setStatus('idle'), 5000);
         }
     };
+
+    const [errorMessage, setErrorMessage] = useState<string>('');
 
     return (
         <section id="contact" className="py-24 px-6 max-w-7xl mx-auto">
@@ -174,7 +182,7 @@ export default function Contact() {
                                     className="p-4 bg-red-500/10 border border-red-500/20 text-red-500 rounded-xl flex items-center gap-3"
                                 >
                                     <AlertCircle size={20} />
-                                    Failed to send message. Please try again.
+                                    {errorMessage || 'Failed to send message. Please try again.'}
                                 </motion.div>
                             )}
                         </AnimatePresence>
