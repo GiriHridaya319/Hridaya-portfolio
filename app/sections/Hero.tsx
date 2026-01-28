@@ -148,7 +148,7 @@ export default function Hero() {
                                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                                 className="absolute -bottom-4 -left-4 glass-effect p-3 rounded-xl border border-accent-blue/20 shadow-[0_10px_30px_rgba(30,64,175,0.2)]"
                             >
-                                <div className="text-accent-blue font-mono text-sm">role: backend_engineer</div>
+                                <div className="text-accent-blue font-mono text-sm">Status: built_for_scale</div>
                             </motion.div>
                         </div>
                     </motion.div>
